@@ -65,11 +65,11 @@ The script will:
 
 ## Current Status
 
-- ✔ Built full data pipeline  
-- ✔ Feature extraction validated  
-- ✔ Binary cancer detection model trained  
-- ✔ Achieved perfect AUC on initial dataset  
-- ✔ Ready for multi-class expansion  
+-  Built full data pipeline  
+-  Feature extraction validated  
+-  Binary cancer detection model trained  
+-  Achieved perfect AUC on initial dataset  
+-  Ready for multi-class expansion  
 
 ## Next Steps (Planned)
 
