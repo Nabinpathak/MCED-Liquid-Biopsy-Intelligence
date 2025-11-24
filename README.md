@@ -23,6 +23,17 @@ MCED-Liquid-Biopsy-Intelligence/
 ├── models/ # trained ML models (*.joblib)
 └── README.md # this file
 
+## Dataset Information
+
+The dataset used for this project is large (20–100 GB) and cannot be uploaded directly to GitHub. For now, the dataset is stored locally.
+
+You can download the raw cfDNA dataset from the official website of National Center for Biotechnology Information(NCBI).(https://www.ncbi.nlm.nih.gov/)
+
+D:\MCED-Liquid-Biopsy-Intelligence\mced_dataset
+├── healthy_CpG
+├── tumor_CpG
+└── labelled_data.xlsx
+
 ## Features Extracted
 
 Each sample is converted to a fixed-length feature vector including:
