@@ -1,5 +1,12 @@
-streamlit
-pandas
 numpy
+pandas
+scikit-learn
 xgboost
+lightgbm
+matplotlib
+seaborn
+pyyaml
+tqdm
 joblib
+scipy
+imbalanced-learn
