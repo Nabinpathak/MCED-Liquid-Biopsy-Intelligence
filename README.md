@@ -146,7 +146,7 @@ Model saved as: models/MCED_CANCER_DETECTOR.joblib
 
 [Healthy vs Tumor]
 <p align="center">
-  <img src="images/healthy_vst_umor.png" width="600">
+  <img src="images/healthy_vs_tumour.png" width="600">
 </p>
 
 [Hypomethylation Comparison]
