@@ -16,13 +16,29 @@ This project uses **bedGraph methylation profiles** (4-column format: `chr, star
 
 MCED-Liquid-Biopsy-Intelligence/
 │
-├── raw_bedgraph/ # raw bedGraph files (tumor + healthy)
-├── processed_bedgraph/ # standardized 4-column files
-├── features/ # extracted features for each sample
-│ └── features_dataset.csv
-├── scripts/ # feature extractor, training, inference
-├── models/ # trained ML models (*.joblib)
-└── README.md # this file
+├── raw_bedgraph/               # Raw bedGraph files (healthy + tumor)
+│   ├── *.bedGraph
+│   └── *.bedgraph
+│
+├── processed_bedgraph/         # Standardized 4-column cleaned bedGraph files
+│   ├── tumor_*.bedGraph
+│   └── healthy_*.bedGraph
+│
+├── features/                   # Extracted feature vectors
+│   └── features_dataset.csv    # Final dataset used for training
+│
+├── scripts/                    # All core ML and processing scripts
+│   ├── extract_features_corrected.py
+│   ├── train_xgb.py
+│   ├── inference.py
+│   └── visualize_progress.py
+│
+├── models/                     # Trained ML models
+│   └── MCED_CANCER_DETECTOR.joblib
+│
+├── requirements.txt            # Python dependencies
+└── README.md                   # This documentation
+
 
 ## Dataset Information
 
