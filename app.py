@@ -7,7 +7,7 @@ import os
 
 # === PAGE CONFIG ===
 st.set_page_config(page_title="MCED Cancer Detector", page_icon="🧬", layout="centered")
-st.title("🧬 MCED Cancer Detector")
+st.title("MCED Cancer Detector")
 st.markdown("### Upload a bedGraph file → Instant Cancer vs Healthy prediction")
 
 # === LOAD MODEL (JSON - NEVER BREAKS) ===
