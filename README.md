@@ -14,6 +14,9 @@ This project uses **bedGraph methylation profiles** (4-column format: `chr, star
 
 ## Project Structure
 
+## 📁 Project Directory Structure
+
+```
 MCED-Liquid-Biopsy-Intelligence/
 │
 ├── raw_bedgraph/               # Raw bedGraph files (healthy + tumor)
@@ -38,6 +41,7 @@ MCED-Liquid-Biopsy-Intelligence/
 │
 ├── requirements.txt            # Python dependencies
 └── README.md                   # This documentation
+```
 
 
 ## Dataset Information
