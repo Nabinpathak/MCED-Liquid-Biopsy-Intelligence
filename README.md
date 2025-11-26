@@ -143,6 +143,17 @@ Patterns in methylation that separate tumor DNA from healthy DNA.
   - `n_CpG`
   - `global_mean`
 Model saved as: models/MCED_CANCER_DETECTOR.joblib
+[Healthy vs Tumor]
+<p align="center">
+  <img src="images/healthy vs tumor.png" width="600">
+</p>
+
+[Hypomethylation Comparison]
+<p align="center">
+  <img src="images/hypomethylation comparison.png" width="600">
+</p>
+
+
 
 To run prediction on a new sample: python predict_sample.py --input path/to/sample.bedgraph
 
