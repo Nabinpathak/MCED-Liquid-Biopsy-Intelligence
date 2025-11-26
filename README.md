@@ -58,37 +58,39 @@ $$
 \mu = \frac{\sum_{i=1}^{N} c_i m_i}{\sum_{i=1}^{N} c_i}
 $$
 
-# Coverage-Weighted Standard Deviation
+# Coverage-Weighted Standard Deviation(Captures genome-wide methylation variability.)
 $$
 \sigma = \sqrt{
 \frac{\sum_{i=1}^{N} c_i (m_i - \mu)^2}
      {\sum_{i=1}^{N} c_i}
 }
 $$
-Captures genome-wide methylation variability.
 
 # Hyper-methylated Fraction (m ≥ 0.8)
+
 $$
 Pct_{hyper} =
 \frac{\sum_{i=1}^{N} c_i \cdot \mathbf{1}(m_i \ge 0.8)}
      {\sum_{i=1}^{N} c_i}
 $$
-# Hypo-methylated Fraction (m ≤ 0.2)
+
+# Hypo-methylated Fraction (m ≤ 0.2)(Cancer cfDNA typically shows global hypomethylation.)
+
 $$
 Pct_{hypo} =
 \frac{\sum_{i=1}^{N} c_i \cdot \mathbf{1}(m_i \le 0.2)}
      {\sum_{i=1}^{N} c_i}
 $$
-Cancer cfDNA typically shows global hypomethylation.
 
-# Chromosome-wise Mean Methylation
+
+# Chromosome-wise Mean Methylation(Where 𝐶𝑘 is the set of CpGs on chromosome 𝑘.)
 
 $$
 \mu_k =
 \frac{\sum_{i \in C_k} c_i m_i}
      {\sum_{i \in C_k} c_i}
 $$
-Where 𝐶𝑘 is the set of CpGs on chromosome 𝑘.
+
 
 # Final Feature Vector
 $$
