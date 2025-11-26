@@ -12,9 +12,7 @@ By analyzing genome-wide methylation from cfDNA, it is possible to detect cancer
 
 This project uses **bedGraph methylation profiles** (4-column format: `chr, start, end, methyl_fraction`) extracted from tumor and healthy samples.
 
-## Project Structure
-
-## 📁 Project Directory Structure
+##  Project Directory Structure
 
 ```
 MCED-Liquid-Biopsy-Intelligence/
@@ -42,6 +40,7 @@ MCED-Liquid-Biopsy-Intelligence/
 ├── requirements.txt            # Python dependencies
 └── README.md                   # This documentation
 ```
+
 
 
 ## Dataset Information
@@ -94,7 +93,7 @@ Pct_{hyper} =
      {\sum_{i=1}^{N} c_i}
 $$
 
-## Hypo-methylated Fraction (m ≤ 0.2)(Cancer cfDNA typically shows global hypomethylation.)
+### Hypo-methylated Fraction (m ≤ 0.2)(Cancer cfDNA typically shows global hypomethylation.)
 
 $$
 Pct_{hypo} =
