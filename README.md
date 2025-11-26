@@ -180,12 +180,12 @@ There may be some mistakes in the code as I am still learning, but I keep improv
 
 ## Contact
 
-If you want to discuss or collaborate feel free to reach out.
-Nabin Pathak
-Computer Engineering Graduate
-Machine Learning Research Enthusiast
-Kathmandu, Nepal
-Gmail: nabinpathak520@gmail.com
+If you want to discuss or collaborate feel free to reach out.  
+**Nabin Pathak**  
+Computer Engineering Graduate  
+Machine Learning Research Enthusiast  
+Kathmandu, Nepal  
+**Gmail:** nabinpathak520@gmail.com
 
 ## Acknowledgements
 
