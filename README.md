@@ -179,7 +179,6 @@ The script will:
 - Increase dataset from ~20 GB → **60–80 GB** (multi-cancer from GEO + EGA)  
 - Add **tissue-of-origin classifier** (multiclass XGBoost)  
 - Implement a **Streamlit web app** for real sample uploads  
-- Apply for **Research Assistant** positions at Harvard / MIT  
 - Perform deeper biological analysis on DMRs  
 
 ## Why I Built This
