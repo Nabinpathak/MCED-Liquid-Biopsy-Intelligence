@@ -65,14 +65,14 @@ D:\MCED-Liquid-Biopsy-Intelligence\mced_dataset
 Each sample is converted to a fixed-length feature vector including:
 
 Let each CpG site be indexed by i = 1, 2, …, N, with:
-⦁	m_i — methylation fraction at site i (range 0–1)
-⦁	c_i — coverage (number of reads) at site i
-⦁	chr_i — chromosome of CpG i
-⦁	Only CpG sites with c_i ≥ 10 are included
+*	m_i — methylation fraction at site i (range 0–1)
+*	c_i — coverage (number of reads) at site i
+*	chr_i — chromosome of CpG i
+*	Only CpG sites with c_i ≥ 10 are included
 
 Each CpG site contains:
-⦁	m_i = methylation value (0–1)
-⦁	c_i = coverage (reads)
+*	m_i = methylation value (0–1)
+*	c_i = coverage (reads)
 
 ### Coverage-Weighted Global Mean Methylation
 $$
