@@ -144,13 +144,13 @@ Patterns in methylation that separate tumor DNA from healthy DNA.
   - `global_mean`
 Model saved as: models/MCED_CANCER_DETECTOR.joblib
 
-                                         [Healthy vs Tumor]
-<p align="center">
+[Healthy vs Tumor]
+<p align="left">
   <img src="healthy vs tumour.png" width="300">
 </p>
 
-                                        [Hypomethylation Comparison]
-<p align="center">
+[Hypomethylation Comparison]
+<p align="left">
   <img src="hypomethylation comparison.png" width="300">
 </p>
 
