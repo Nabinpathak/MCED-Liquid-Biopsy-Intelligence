@@ -3,6 +3,7 @@ A Machine Learning Pipeline for Early-Stage Tumor Detection from Blood
 
 This repository contains my research project where I build a complete end-to-end workflow for detecting cancer from **cell-free DNA (cfDNA)** methylation patterns. It includes data preprocessing, feature extraction, model training, evaluation, and a prediction pipeline that works on new patient samples.  
 This project is still in progress, and I am improving the dataset size and accuracy over time.
+<p align="center"> <img src="https://img.shields.io/badge/Python-3.10%2B-blue"> <img src="https://img.shields.io/badge/ML-XGBoost-green"> <img src="https://img.shields.io/badge/Data-Methylation%20CpG-orange"> <img src="https://img.shields.io/badge/Status-Research%20Prototype-brightgreen"> </p>
 
 ## Background
 
@@ -26,6 +27,12 @@ MCED-Liquid-Biopsy-Intelligence/
 ## Dataset Information
 
 The dataset used for this project is large (20–100 GB) and cannot be uploaded directly to GitHub. For now, the dataset is stored locally.
+chr1    10468    10469    100    6    0
+chr1    10469    10470     83    5    1
+
+CpG position = chr1_10468
+methylation = m_i
+coverage     = c_i
 
 You can download the raw cfDNA dataset from the official website of National Center for Biotechnology Information(NCBI).(https://www.ncbi.nlm.nih.gov/)
 
@@ -37,13 +44,60 @@ D:\MCED-Liquid-Biopsy-Intelligence\mced_dataset
 ## Features Extracted
 
 Each sample is converted to a fixed-length feature vector including:
+Let each CpG site be indexed by i=1,2,…,N, with:
+⦁	   𝑚𝑖∈[0,1] = methylation fraction at site 𝑖
+⦁	   𝑐𝑖∈N = coverage (number of reads) at site 𝑖
+⦁	   Cchr⊂{1,…,N} = CpGs belonging to chromosome chr
+⦁	   Only sites with 𝑐𝑖≥10 are included.
+Each CpG site has:
+⦁	m_i = methylation (0–1)
+⦁	c_i = coverage (reads)
 
-- global mean methylation  
-- global standard deviation  
-- percent hyper-methylated CpGs  
-- percent hypo-methylated CpGs  
-- chromosome-wise methylation  
-- CpG count (coverage weighted)
+# Coverage-Weighted Global Mean Methylation
+$$
+\mu = \frac{\sum_{i=1}^{N} c_i m_i}{\sum_{i=1}^{N} c_i}
+$$
+
+# Coverage-Weighted Standard Deviation
+$$
+\sigma = \sqrt{
+\frac{\sum_{i=1}^{N} c_i (m_i - \mu)^2}
+     {\sum_{i=1}^{N} c_i}
+}
+$$
+Captures genome-wide methylation variability.
+
+# Hyper-methylated Fraction (m ≥ 0.8)
+$$
+Pct_{hyper} =
+\frac{\sum_{i=1}^{N} c_i \cdot \mathbf{1}(m_i \ge 0.8)}
+     {\sum_{i=1}^{N} c_i}
+$$
+# Hypo-methylated Fraction (m ≤ 0.2)
+$$
+Pct_{hypo} =
+\frac{\sum_{i=1}^{N} c_i \cdot \mathbf{1}(m_i \le 0.2)}
+     {\sum_{i=1}^{N} c_i}
+$$
+Cancer cfDNA typically shows global hypomethylation.
+
+# Chromosome-wise Mean Methylation
+
+$$
+\mu_k =
+\frac{\sum_{i \in C_k} c_i m_i}
+     {\sum_{i \in C_k} c_i}
+$$
+Where 𝐶𝑘 is the set of CpGs on chromosome 𝑘.
+
+# Final Feature Vector
+$$
+F =
+[
+\mu,\ \sigma,\ Pct_{hyper},\ Pct_{hypo},\
+\{\mu_k\}_{k=1}^{24},\ \{Count_k\}_{k=1}^{24},\ CpG_{eff}
+]
+$$
 
 These features are stored in `features_dataset.csv` and used for model training.
 
@@ -115,6 +169,6 @@ Gmail: nabinpathak520@gmail.com
 ## Acknowledgements
 
 This project uses public methylation datasets from GEO and other open sources.  
-Thanks to the researchers who made their cfDNA data accessible for scientific progress.
+
 
 
