@@ -29,10 +29,10 @@ MCED-Liquid-Biopsy-Intelligence/
 │   └── features_dataset.csv    # Final dataset used for training
 │
 ├── scripts/                    # All core ML and processing scripts
-│   ├── extract_features_corrected.py
+│   ├── extract_features.py
 │   ├── train_xgb.py
-│   ├── inference.py
-│   └── visualize_progress.py
+│   ├── visualize_progress.py
+│   
 │
 ├── models/                     # Trained ML models
 │   └── MCED_CANCER_DETECTOR.joblib
