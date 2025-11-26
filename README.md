@@ -46,8 +46,13 @@ MCED-Liquid-Biopsy-Intelligence/
 ## Dataset Information
 
 The dataset used for this project is large (20–100 GB) and cannot be uploaded directly to GitHub. For now, the dataset is stored locally.
-chr1    10468    10469    100    6    0
-chr1    10469    10470     83    5    1
+Where:  
+- **chr1** — chromosome  
+- **10468–10469** — genomic interval (1 bp CpG site)  
+- **100 / 83** — methylation percentage or fraction  
+- **6 / 5** — number of reads covering the CpG  
+- **0 / 1** — methylated vs unmethylated read count
+
 
 CpG position = chr1_10468
 methylation = m_i
