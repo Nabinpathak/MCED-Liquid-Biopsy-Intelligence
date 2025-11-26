@@ -53,12 +53,12 @@ Each CpG site has:
 ⦁	m_i = methylation (0–1)
 ⦁	c_i = coverage (reads)
 
-# Coverage-Weighted Global Mean Methylation
+### Coverage-Weighted Global Mean Methylation
 $$
 \mu = \frac{\sum_{i=1}^{N} c_i m_i}{\sum_{i=1}^{N} c_i}
 $$
 
-# Coverage-Weighted Standard Deviation(Captures genome-wide methylation variability.)
+### Coverage-Weighted Standard Deviation(Captures genome-wide methylation variability.)
 $$
 \sigma = \sqrt{
 \frac{\sum_{i=1}^{N} c_i (m_i - \mu)^2}
@@ -66,7 +66,7 @@ $$
 }
 $$
 
-# Hyper-methylated Fraction (m ≥ 0.8)
+### Hyper-methylated Fraction (m ≥ 0.8)
 
 $$
 Pct_{hyper} =
@@ -74,7 +74,7 @@ Pct_{hyper} =
      {\sum_{i=1}^{N} c_i}
 $$
 
-# Hypo-methylated Fraction (m ≤ 0.2)(Cancer cfDNA typically shows global hypomethylation.)
+## Hypo-methylated Fraction (m ≤ 0.2)(Cancer cfDNA typically shows global hypomethylation.)
 
 $$
 Pct_{hypo} =
@@ -82,8 +82,7 @@ Pct_{hypo} =
      {\sum_{i=1}^{N} c_i}
 $$
 
-
-# Chromosome-wise Mean Methylation(Where 𝐶𝑘 is the set of CpGs on chromosome 𝑘.)
+### Chromosome-wise Mean Methylation(Where 𝐶𝑘 is the set of CpGs on chromosome 𝑘.)
 
 $$
 \mu_k =
@@ -91,8 +90,7 @@ $$
      {\sum_{i \in C_k} c_i}
 $$
 
-
-# Final Feature Vector
+### Final Feature Vector
 $$
 F =
 [
