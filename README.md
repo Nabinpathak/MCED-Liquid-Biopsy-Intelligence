@@ -146,12 +146,12 @@ Model saved as: models/MCED_CANCER_DETECTOR.joblib
 
 [Healthy vs Tumor]
 <p align="center">
-  <img src="healthy_vs_tumour.png" width="600">
+  <img src="healthy vs tumour.png" width="600">
 </p>
 
 [Hypomethylation Comparison]
 <p align="center">
-  <img src="hypomethylation_comparison.png" width="600">
+  <img src="hypomethylation comparison.png" width="600">
 </p>
 
 
