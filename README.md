@@ -54,22 +54,24 @@ methylation = m_i
 coverage     = c_i
 
 You can download the raw cfDNA dataset from the official website of National Center for Biotechnology Information(NCBI).(https://www.ncbi.nlm.nih.gov/)
-
+```
 D:\MCED-Liquid-Biopsy-Intelligence\mced_dataset
 ├── healthy_CpG
 ├── tumor_CpG
 └── labelled_data.xlsx
-
+```
 ## Features Extracted
 
 Each sample is converted to a fixed-length feature vector including:
-Let each CpG site be indexed by i=1,2,…,N, with:
-⦁	   𝑚𝑖∈[0,1] = methylation fraction at site 𝑖
-⦁	   𝑐𝑖∈N = coverage (number of reads) at site 𝑖
-⦁	   Cchr⊂{1,…,N} = CpGs belonging to chromosome chr
-⦁	   Only sites with 𝑐𝑖≥10 are included.
-Each CpG site has:
-⦁	m_i = methylation (0–1)
+
+Let each CpG site be indexed by i = 1, 2, …, N, with:
+⦁	m_i — methylation fraction at site i (range 0–1)
+⦁	c_i — coverage (number of reads) at site i
+⦁	chr_i — chromosome of CpG i
+⦁	Only CpG sites with c_i ≥ 10 are included
+
+Each CpG site contains:
+⦁	m_i = methylation value (0–1)
 ⦁	c_i = coverage (reads)
 
 ### Coverage-Weighted Global Mean Methylation
