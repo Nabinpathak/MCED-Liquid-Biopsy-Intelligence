@@ -223,9 +223,10 @@ Machine Learning Research Enthusiast
 Kathmandu, Nepal  
 **Gmail:** nabinpathak520@gmail.com
 
-## Acknowledgements
+## REFRENCES
+[1] 
 
-This project uses public methylation datasets from GEO and other open sources.  
+  
 
 
 
