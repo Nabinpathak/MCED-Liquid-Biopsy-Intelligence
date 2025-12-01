@@ -14,6 +14,17 @@ DNA methylation is one of the strongest biomarkers for cancer. Tumor cells relea
 
 DNA methylation is one of the most trustworthy indicators for early cancer diagnosis, according to several research. Tumors often display global hypomethylation and promoter hypermethylation, which may be obtained using cfDNA sequencing. Targeted methylation patterns in cfDNA may identify over 50 cancer types with high specificity and predict the tissue of origin, according to significant studies such as the GRAIL/CCGA investigations. Other study underlines the challenges: coverage heterogeneity, fragment size bias, and batch effects across datasets. These findings establish cfDNA methylation as a potent yet technically hard area.
 
+The structure utilized in contemporary MCED (Multi-Cancer Early Detection) systems is adopted in this project:
+
+-	 **Epigenetic divergence**: Systematic hyper/hypomethylation causes tumor methylomes to diverge from normal cells.
+
+-	 **cfDNA shedding model**: Sensitive pattern extraction is necessary because tumor-derived fragments mingle with vast amounts of healthy DNA.
+
+-	 **Coverage-aware feature engineering**: Low-coverage  Weighting by coverage and filtering enhances signal quality since CpG sites add noise.
+
+-	 **Machine learning classification**: Extracted methylation statistics (global, chromosome-wise, hyper/hypo ratios) operate as features for an ML classifier such as XGBoost.
+
+
 This project uses **bedGraph methylation profiles** (4-column format: `chr, start, end, methyl_fraction`) extracted from tumor and healthy samples.
 
 ##  Project Directory Structure
