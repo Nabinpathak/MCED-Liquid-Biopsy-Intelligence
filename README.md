@@ -8,21 +8,14 @@ This project is still in progress, and I am improving the dataset size and accur
 ## Background
 
 DNA methylation is one of the strongest biomarkers for cancer. Tumor cells release fragmented DNA into the bloodstream (cfDNA), and their methylation pattern becomes different compared to healthy cells.Detecting such modifications early can provide inexpensive cancer screening, even before symptoms or imaging results.  However, cfDNA signals are loud, sparse, and extremely changeable, making reliable early detection problematic.By analyzing genome-wide methylation from cfDNA, it is possible to detect cancer early — even before imaging.
+
 <p align="center">
   <img src="cfDNA_Methylation.png" width="400">
 </p>
 
 DNA methylation is one of the most trustworthy indicators for early cancer diagnosis, according to several research. Tumors often display global hypomethylation and promoter hypermethylation, which may be obtained using cfDNA sequencing. Targeted methylation patterns in cfDNA may identify over 50 cancer types with high specificity and predict the tissue of origin, according to significant studies such as the GRAIL/CCGA investigations. Other study underlines the challenges: coverage heterogeneity, fragment size bias, and batch effects across datasets. These findings establish cfDNA methylation as a potent yet technically hard area.
 
-The structure utilized in contemporary MCED (Multi-Cancer Early Detection) systems is adopted in this project:
 
--	 **Epigenetic divergence**: Systematic hyper/hypomethylation causes tumor methylomes to diverge from normal cells.
-
--	 **cfDNA shedding model**: Sensitive pattern extraction is necessary because tumor-derived fragments mingle with vast amounts of healthy DNA.
-
--	 **Coverage-aware feature engineering**: Low-coverage  Weighting by coverage and filtering enhances signal quality since CpG sites add noise.
-
--	 **Machine learning classification**: Extracted methylation statistics (global, chromosome-wise, hyper/hypo ratios) operate as features for an ML classifier such as XGBoost.
 
 
 This project uses **bedGraph methylation profiles** (4-column format: `chr, start, end, methyl_fraction`) extracted from tumor and healthy samples.
@@ -82,6 +75,16 @@ D:\MCED-Liquid-Biopsy-Intelligence\mced_dataset
 ```
 ## Features Extracted
 
+The structure utilized in contemporary MCED (Multi-Cancer Early Detection) systems is adopted in this project:
+
+-	 **Epigenetic divergence**: Systematic hyper/hypomethylation causes tumor methylomes to diverge from normal cells.
+
+-	 **cfDNA shedding model**: Sensitive pattern extraction is necessary because tumor-derived fragments mingle with vast amounts of healthy DNA.
+
+-	 **Coverage-aware feature engineering**: Low-coverage  Weighting by coverage and filtering enhances signal quality since CpG sites add noise.
+
+-	 **Machine learning classification**: Extracted methylation statistics (global, chromosome-wise, hyper/hypo ratios) operate as features for an ML classifier such as XGBoost.
+  
 Each sample is converted to a fixed-length feature vector including:
 
 Let each CpG site be indexed by i = 1, 2, …, N, with:
