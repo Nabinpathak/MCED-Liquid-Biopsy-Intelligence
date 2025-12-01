@@ -9,7 +9,7 @@ This project is still in progress, and I am improving the dataset size and accur
 
 DNA methylation is one of the strongest biomarkers for cancer. Tumor cells release fragmented DNA into the bloodstream (cfDNA), and their methylation pattern becomes different compared to healthy cells.Detecting such modifications early can provide inexpensive cancer screening, even before symptoms or imaging results.  However, cfDNA signals are loud, sparse, and extremely changeable, making reliable early detection problematic.By analyzing genome-wide methylation from cfDNA, it is possible to detect cancer early — even before imaging.
 <p align="center">
-  <img src="Methylation_Cancer.png" width="700">
+  <img src="Methylation_Cancer.png" width="500">
 </p>
 
 
