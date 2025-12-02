@@ -19,7 +19,7 @@ DNA methylation is one of the strongest biomarkers for cancer. Tumor cells relea
 DNA methylation is one of the most trustworthy indicators for early cancer diagnosis, according to several research. Tumors often display global hypomethylation and promoter hypermethylation, which may be obtained using cfDNA sequencing. Targeted methylation patterns in cfDNA may identify over 50 cancer types with high specificity and predict the tissue of origin, according to significant studies such as the GRAIL/CCGA investigations. Other study underlines the challenges: coverage heterogeneity, fragment size bias, and batch effects across datasets. These findings establish cfDNA methylation as a potent yet technically hard area.
 
 <p align="center">
-  <img src="MCED_PIPELINES.png" width="420">
+  <img src="MCED_PIPELINES.png" width="250">
 </p>
 
 <p align="center"><em>Figure 1: Working Mechanism of MCED</em></p>
