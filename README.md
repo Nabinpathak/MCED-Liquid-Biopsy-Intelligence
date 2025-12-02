@@ -229,7 +229,14 @@ Kathmandu, Nepal
 **Gmail:** nabinpathak520@gmail.com
 
 ## REFRENCES
-[1] 
+[1]  Vincenza C, Judy H, Yasutaka Y, Sheng-Y, Himisha B,"Epigenetics in prostate cancer: clinical implications" doi: 10.21037/tau-20-1339, 2021.
+[2]  Ros W, Sarah N, Melissa H, Yiwen L, Claire K, Gary R, Rachel C, Sofia D, "Multi-cancer early detection tests for general population screening: a systematic literature review" https://doi.org/10.1101/2024.02.14.24302576; 2024.
+[3] Janet V,  David G, Alex G, Eric A & Jordan J "A multi-cancer early detection blood test using machine learning detects earlystage cancers lacking USPSTF recommended screening"https://doi.org/10.1038/s41698-024-00568-z, 2024.
+[4] Mussab F, Hadi A, Stephen Q, Özge K, Jon E, Maarten J, "Integrating Multi‑Cancer Early Detection (MCED) Tests with Standard Cancer Screening: System Dynamics Model Development and Feasibility Testing" October 2024.
+[5] Gao, Q., Lin, Y. P., Li, B. S., Li, G. Q., Dong, L. Q., Shen, B. Y., Lou, W. H., Wu, W. C., Ge, D., Zhu, Q. L., Xu, Y., Xu, J. M., Chang, W. J., Lan, P., Zhou, P. H., He, M. J., Qiao, G. B., Chuai, S. K., Zang, R. Y., Shi, T. Y., Tan, L. J., Yin, J., Zeng, Q., Su, X. F., Wang, Z. D., Zhao, X. Q., Nian, W. Q., Zhang, S., Zhou, J., Cai, S. L., Zhang, Z. H., & Fan, J.,"Unintrusive multi-cancer detection by circulating cell-free DNA methylation sequencing (THUNDER): development and independent validation studies" Feburary 2023.
+[6] Xiong, D., Han, T., Li, Y., Hong, Y., Li, S., Li, X., Tao, W., Huang, Y. S., Chen, W., & Li, C. . "TOTEM: A multi-cancer detection and localization approach using circulating tumor DNA methylation markers"(2024).
+[7] Matrana, M., Shukla, V., Kingsbury, D., Poliak, M., Lipton, J., McMillin, M., Malinow, L. B., Venn, O., Beausang, J. F., Stanley, G., Hubbell, E., Kurtzman, K. N., Venstrom, J. M., Shaknovich, R., & Westgate, C. "Real-world data and clinical experience from over 100,000 multi-cancer early detection tests"(2025).
+
 
   
 
