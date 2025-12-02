@@ -23,7 +23,9 @@ DNA methylation is one of the most trustworthy indicators for early cancer diagn
   <figcaption><em>Figure 1: Working Mechanism of MCED</em></figcaption>
 </figure>
 
+Cancer changes DNA methylation across the genome, creating global hypomethylation and localized hypermethylation.  Tumor-derived DNA fragments (cfDNA) circulate in blood and keep these aberrant methylation patterns.  Using bisulfite sequencing, methylation at millions of CpG sites may be measured and summarized into global and chromosome-level characteristics.  These parameters capture crucial cancer-specific methylation changes and allow an ML classifier to discriminate tumor cfDNA from healthy cfDNA with high accuracy.  
 
+This project implements the pipeline: cfDNA methylation extraction → feature computation → XGBoost classification for early cancer diagnosis.
 
 This project uses **bedGraph methylation profiles** (4-column format: `chr, start, end, methyl_fraction`) extracted from tumor and healthy samples.
 
