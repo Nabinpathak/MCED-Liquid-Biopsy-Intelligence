@@ -11,7 +11,7 @@ DNA methylation is one of the strongest biomarkers for cancer. Tumor cells relea
 
 <figure style="text-align: center;">
   <img src="cfDNA_Methylation.png" width="400">
-  <figcaption><em>Figure 1: Overview of circulating cell-free DNA methylation and its potential clinical application.</em></figcaption>
+  <figcaption><em>Figure 1: Overview of circulating cell-free DNA methylation and its potential clinical application[1].</em></figcaption>
 </figure>
 
 
