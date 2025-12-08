@@ -30,7 +30,7 @@ The findings indicate that, when paired with reliable computational pipelines, g
   <img src="MCED_PIPELINES.png" width="250">
 </p>
 
-<p align="center"><em>Figure 1: Working Mechanism of MCED</em></p>
+<p align="center"><em>Figure 2: Working Mechanism of MCED</em></p>
 
 
 Cancer changes DNA methylation across the genome, creating global hypomethylation and localized hypermethylation. Tumor-derived DNA fragments (cfDNA) circulate in blood and keep these aberrant methylation patterns.  Using bisulfite sequencing, methylation at millions of CpG sites may be measured and summarized into global and chromosome-level characteristics.  These parameters capture crucial cancer-specific methylation changes and allow an ML classifier to discriminate tumor cfDNA from healthy cfDNA with high accuracy.  
