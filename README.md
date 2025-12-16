@@ -120,6 +120,8 @@ Each CpG site contains:
 $$
 \mu = \frac{\sum_{i=1}^{N} c_i m_i}{\sum_{i=1}^{N} c_i}
 $$
+
+
 Mu represents the coverage-weighted global mean methylation across all CpG sites
 ### Coverage-Weighted Standard Deviation(Captures genome-wide methylation variability.)
 $$
@@ -128,6 +130,8 @@ $$
      {\sum_{i=1}^{N} c_i}
 }
 $$
+
+
 Sigma measures the coverage-weighted variability of methylation levels across the genome.
 ### Hyper-methylated Fraction (m ≥ 0.8)
 
@@ -136,6 +140,8 @@ Pct_{hyper} =
 \frac{\sum_{i=1}^{N} c_i \cdot \mathbf{1}(m_i \ge 0.8)}
      {\sum_{i=1}^{N} c_i}
 $$
+
+
 The hyper-methylated fraction is the proportion of CpG coverage coming from sites with methylation levels of at least eighty percent.
 ### Hypo-methylated Fraction (m ≤ 0.2)(Cancer cfDNA typically shows global hypomethylation.)
 
@@ -144,6 +150,8 @@ Pct_{hypo} =
 \frac{\sum_{i=1}^{N} c_i \cdot \mathbf{1}(m_i \le 0.2)}
      {\sum_{i=1}^{N} c_i}
 $$
+
+
 The hypomethylated percentage is calculated as the total coverage of CpG sites with methylation less than or equal to twenty percent, divided by the total CpG coverage.
 ### Chromosome-wise Mean Methylation(Where 𝐶𝑘 is the set of CpGs on chromosome 𝑘.)
 
@@ -152,6 +160,8 @@ $$
 \frac{\sum_{i \in C_k} c_i m_i}
      {\sum_{i \in C_k} c_i}
 $$
+
+
 Mu k represents the coverage-weighted mean methylation level for chromosome k.
 ### Final Feature Vector
 $$
@@ -161,6 +171,8 @@ F =
 \{\mu_k\}_{k=1}^{24},\ \{Count_k\}_{k=1}^{24},\ CpG_{eff}
 ]
 $$
+
+
 The final feature vector includes global mean and variance of methylation, hyper- and hypo-methylation percentages, chromosome-wise mean methylation and CpG counts across all twenty-four chromosomes, and the effective number of CpG sites
 These features are stored in `features_dataset.csv` and used for model training.
 
