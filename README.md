@@ -173,7 +173,8 @@ F =
 $$
 
 
-The final feature vector includes global mean and variance of methylation, hyper- and hypo-methylation percentages, chromosome-wise mean methylation and CpG counts across all twenty-four chromosomes, and the effective number of CpG sites
+The final feature vector includes global mean and variance of methylation, hyper- and hypo-methylation percentages, chromosome-wise mean methylation and CpG counts across all twenty-four chromosomes, and the effective number of CpG sites.
+
 These features are stored in `features_dataset.csv` and used for model training.
 
 ## Model Training
