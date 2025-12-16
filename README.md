@@ -123,7 +123,7 @@ $$
 
 
 Mu represents the coverage-weighted global mean methylation across all CpG sites
-### Coverage-Weighted Standard Deviation(Captures genome-wide methylation variability.)
+### Coverage-Weighted Standard Deviation
 $$
 \sigma = \sqrt{
 \frac{\sum_{i=1}^{N} c_i (m_i - \mu)^2}
@@ -143,7 +143,7 @@ $$
 
 
 The hyper-methylated fraction is the proportion of CpG coverage coming from sites with methylation levels of at least eighty percent.
-### Hypo-methylated Fraction (m ≤ 0.2)(Cancer cfDNA typically shows global hypomethylation.)
+### Hypo-methylated Fraction (m ≤ 0.2)
 
 $$
 Pct_{hypo} =
