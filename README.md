@@ -175,7 +175,6 @@ $$
 
 The final feature vector includes global mean and variance of methylation, hyper- and hypo-methylation percentages, chromosome-wise mean methylation and CpG counts across all twenty-four chromosomes, and the effective number of CpG sites.
 
-These features are stored in `features_dataset.csv` and used for model training.
 
 ## Fragmentomics
 
@@ -211,7 +210,7 @@ Where:
   - $CV_f$: Coefficient of variation (std / mean)
   - $H_f$: Shannon entropy of fragment length distribution (measures irregularity)
 
-These features are computed in a coverage-weighted manner to reduce noise in low-depth cfDNA samples.
+These features are computed in a coverage-weighted manner to reduce noise in low-depth cfDNA samples and are stored in `features_with_fragmentomics.csv` and used for model training.
 
 ## Model Training
 
