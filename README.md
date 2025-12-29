@@ -163,7 +163,7 @@ $$
 
 
 Mu k represents the coverage-weighted mean methylation level for chromosome k.
-### Final Feature Vector
+### Final Feature Vector for Methylation
 $$
 F =
 [
@@ -176,6 +176,42 @@ $$
 The final feature vector includes global mean and variance of methylation, hyper- and hypo-methylation percentages, chromosome-wise mean methylation and CpG counts across all twenty-four chromosomes, and the effective number of CpG sites.
 
 These features are stored in `features_dataset.csv` and used for model training.
+
+## Fragmentomics
+
+### Feature Vector (F)
+
+The model uses the following comprehensive feature vector **F** for each sample:
+
+$$
+F = \left[ 
+\mu, \sigma, P_{ct_{hyper}}, P_{ct_{hypo}}, 
+\{\mu_k, C_k\}_{k=1}^{24}, 
+C_pG_{eff},
+\mu_f, m_f, P_{short}, \sigma_f, CV_f, H_f 
+\right]
+$$
+
+Where:
+- **Global methylation**:
+  - $\mu$: Genome-wide mean methylation level
+  - $\sigma$: Standard deviation of methylation
+  - $P_{ct_{hyper}}$: % CpGs with methylation ≥ 0.8
+  - $P_{ct_{hypo}}$: % CpGs with methylation ≤ 0.2
+- **Chromosome-wise** (k = 1 to 22, X, Y — 24 chromosomes):
+  - $\mu_k$: Mean methylation on chromosome k
+  - $C_k$: Weighted CpG count on chromosome k
+- **Effective coverage**:
+  - $C_pG_{eff}$: Total effective (coverage-weighted) CpG count
+- **Fragmentomics** (newly added – captures cancer-specific cfDNA fragmentation):
+  - $\mu_f$: Mean inter-CpG fragment length
+  - $m_f$: Median inter-CpG fragment length
+  - $P_{short}$: Percentage of fragments < 120 bp (strong cancer signal)
+  - $\sigma_f$: Standard deviation of fragment lengths
+  - $CV_f$: Coefficient of variation (std / mean)
+  - $H_f$: Shannon entropy of fragment length distribution (measures irregularity)
+
+These features are computed in a coverage-weighted manner to reduce noise in low-depth cfDNA samples.
 
 ## Model Training
 
