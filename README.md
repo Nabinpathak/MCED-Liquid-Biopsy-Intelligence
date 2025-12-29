@@ -272,7 +272,7 @@ It also helped me understand:
 - how cfDNA leaks tumor signals into blood  
 - how machine learning can pick up these subtle methylation patterns  
 
-There may be some mistakes in the code as I am still learning, but I keep improving things as dataset grows.
+There may be mess in the way of presenting as I am still learning the biological foundations, but I keep improving things as I work with real sample data.
 
 ## Contact
 
