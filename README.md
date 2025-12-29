@@ -192,23 +192,18 @@ C_pG_{eff},
 $$
 
 Where:
-- **Global methylation**:
-  - $\mu$: Genome-wide mean methylation level
-  - $\sigma$: Standard deviation of methylation
-  - $P_{ct_{hyper}}$: % CpGs with methylation ≥ 0.8
-  - $P_{ct_{hypo}}$: % CpGs with methylation ≤ 0.2
-- **Chromosome-wise** (k = 1 to 22, X, Y — 24 chromosomes):
-  - $\mu_k$: Mean methylation on chromosome k
-  - $C_k$: Weighted CpG count on chromosome k
-- **Effective coverage**:
-  - $C_pG_{eff}$: Total effective (coverage-weighted) CpG count
-- **Fragmentomics** (newly added – captures cancer-specific cfDNA fragmentation):
+ **Fragmentomics** (newly added – captures cancer-specific cfDNA fragmentation):
   - $\mu_f$: Mean inter-CpG fragment length
   - $m_f$: Median inter-CpG fragment length
   - $P_{short}$: Percentage of fragments < 120 bp (strong cancer signal)
   - $\sigma_f$: Standard deviation of fragment lengths
   - $CV_f$: Coefficient of variation (std / mean)
   - $H_f$: Shannon entropy of fragment length distribution (measures irregularity)
+- **Chromosome-wise** (k = 1 to 22, X, Y — 24 chromosomes):
+  - $\mu_k$: Mean methylation on chromosome k
+  - $C_k$: Weighted CpG count on chromosome k
+- **Effective coverage**:
+  - $C_pG_{eff}$: Total effective (coverage-weighted) CpG count
 
 These features are computed in a coverage-weighted manner to reduce noise in low-depth cfDNA samples and are stored in `features_with_fragmentomics.csv` and used for model training.
 
