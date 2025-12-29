@@ -192,7 +192,7 @@ C_pG_{eff},
 $$
 
 Where:
- **Fragmentomics** (newly added – captures cancer-specific cfDNA fragmentation):
+ **Fragmentomics** (captures cancer-specific cfDNA fragmentation):
   - $\mu_f$: Mean inter-CpG fragment length
   - $m_f$: Median inter-CpG fragment length
   - $P_{short}$: Percentage of fragments < 120 bp (strong cancer signal)
