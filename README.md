@@ -163,7 +163,7 @@ $$
 
 
 Mu k represents the coverage-weighted mean methylation level for chromosome k.
-### Final Feature Vector for Methylation
+### Feature Vector for Methylation
 $$
 F =
 [
