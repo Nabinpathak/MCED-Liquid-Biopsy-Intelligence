@@ -218,69 +218,96 @@ These features are computed in a coverage-weighted manner to reduce noise in low
 
 I train an **XGBoost classifier** using 5-fold cross-validation.
 
-**What the model learns:**  
-Patterns in methylation that separate tumor DNA from healthy DNA.
+**What the model learns:**
+
+Patterns in methylation, coverage, and genomic features that may distinguish tumor-associated cfDNA signals from healthy cfDNA.
 
 **Training Output Example (my latest run):**
 
-- Train samples: 16 (20gb raw dataset) 
-- 5-fold CV AUC: **1.0000 ± 0.0000**  
-- Sensitivity @ 99% specificity: **100%**  
-- Top features:
+- **Train samples:** 16 (20 GB raw dataset)
+- **5-fold CV AUC:** **1.0000 ± 0.0000**
+- **Top features:**
   - `n_CpG`
   - `global_mean`
-Model saved as: models/MCED_CANCER_DETECTOR.joblib
+- **Model:** XGBoost
+- **Model saved as:** `models/MCED_CANCER_DETECTOR.joblib`
 
-[Healthy vs Tumor]
+> **Note:** This is an initial result from a small cohort and should not be interpreted as evidence of clinical performance or generalization. Further experiments with larger and independent cohorts are planned to evaluate the robustness of the observed signal.
+
+### Healthy vs Tumor
+
 <p align="left">
   <img src="healthy vs tumour.png" width="500">
 </p>
 
-[Hypomethylation Comparison]
+### Hypomethylation Comparison
+
 <p align="left">
   <img src="hypomethylation comparison.png" width="500">
 </p>
 
+### Prediction
 
+To run prediction on a new sample:
 
-To run prediction on a new sample: python predict_sample.py --input path/to/sample.bedgraph
+```bash
+python predict_sample.py --input path/to/sample.bedgraph
+```
 
 The script will:
 
-1. extract features from the uploaded methylation file  
-2. load the trained model  
-3. output cancer probability (0–1)  
-4. give recommended clinical threshold  
-5. show top contributing features  
+1. Extract features from the input methylation file
+2. Load the trained model
+3. Output the model's predicted cancer probability (0–1)
+4. Report the prediction threshold used by the model
+5. Show the top contributing features
+
+> **Note:** The prediction pipeline is intended for research and experimentation, not clinical diagnosis.
+
+---
 
 ## Current Status
 
--  Built full data pipeline  
--  Feature extraction validated  
--  Binary cancer detection model trained  
--  Achieved perfect AUC on initial dataset  
--  Ready for multi-class expansion  
+- Built full data pipeline
+- Feature extraction validated
+- Binary cancer classification model trained
+- Obtained an initial **5-fold CV AUC of 1.0000** on a 16-sample cohort
+- Identified methylation and coverage-related features for further investigation
+- Pipeline is ready to scale to larger and more diverse datasets
+
+---
 
 ## Next Steps (Planned)
 
-- Increase dataset from ~20 GB → **60–80 GB** (multi-cancer from GEO + EGA)  
-- Add **tissue-of-origin classifier** (multiclass XGBoost)  
-- Implement a **Streamlit web app** for real sample uploads  
-- Perform deeper biological analysis on DMRs  
+- Increase dataset from ~20 GB → **60–80 GB** using multi-cancer data from GEO + EGA
+- Perform **independent and cross-cohort validation**
+- Investigate model robustness across different sequencing coverage and dataset characteristics
+- Perform **feature-ablation experiments** to determine the contribution of different feature groups
+- Investigate whether `n_CpG` and coverage-related features reflect biological signal or technical/sample-quality effects
+- Add a **tissue-of-origin classifier** after establishing robust binary cancer-vs-control performance
+- Perform deeper biological analysis of DMRs
+- Explore interpretable machine-learning methods to connect model predictions with biologically meaningful methylation patterns
+- Implement a **Streamlit web application** for research and visualization
+
+---
 
 ## Why I Built This
 
-I have a strong interest in Machine Learning for healthcare. My goal is to work in a research group and contribute to developing early detection methods for cancer using cfDNA.  
-This project is my attempt to show I can build a complete pipeline independently — from raw sequencing data to an actual working cancer detector.
+I have a strong interest in **Machine Learning for healthcare and computational biology**. My goal is to develop machine-learning methods that can contribute to early cancer detection using molecular data such as cfDNA.
 
-It also helped me understand:
+This project is my attempt to build a complete research pipeline independently — from processing raw sequencing-derived data and designing molecular features to training a machine-learning model and investigating which features contribute to its predictions.
 
-- how methylation behaves in solid tumors  
-- how cfDNA leaks tumor signals into blood  
-- how machine learning can pick up these subtle methylation patterns  
+It also helped me explore:
 
-There may be mess in the way of presenting as I am still learning the biological foundations, but I keep improving things as I work with real sample data.
+- How methylation patterns in cfDNA may differ between tumor-associated and healthy samples
+- How cfDNA can carry molecular signals associated with tumors
+- How sequencing coverage and genomic features influence sample-level representations
+- How machine learning can identify combinations of molecular features associated with cancer
+- How computational models can be used to investigate biological questions
 
+There is still much for me to learn about the biological foundations of cancer genomics, and I consider this project an ongoing research effort.
+
+Rather than treating the initial results as a final conclusion, I am using them to identify better experiments, improve the methodology, and test whether the observed signals remain consistent across larger and more heterogeneous datasets.
 ## Contact
 
 If you want to discuss or collaborate feel free to reach out.  
