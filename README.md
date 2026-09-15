@@ -180,7 +180,6 @@ The feature vector includes global mean and variance of methylation, hyper- and 
 We enhanced the feature set with **fragmentomics** to capture cancer-specific cfDNA fragmentation patterns:
 - Cancer cfDNA tends to have **shorter** (<120 bp) and more **irregular** fragments due to abnormal apoptosis and open chromatin.
 - These are calculated directly from **inter-CpG distances** in bedGraph files (no additional data needed).
-- The new features significantly improve performance on real cfDNA samples (previously ~50% → expected 95–99% after retraining).
 
 This brings the pipeline in line with 2025 state-of-the-art approaches (e.g., GRAIL Galleri, DELFI, SPOT-MAS).
 
