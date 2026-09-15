@@ -280,7 +280,6 @@ The script will:
 - Add a **tissue-of-origin classifier** after establishing robust binary cancer-vs-control performance
 - Perform deeper biological analysis of DMRs
 - Explore interpretable machine-learning methods to connect model predictions with biologically meaningful methylation patterns
-- Implement a **Streamlit web application** for research and visualization
 
 ---
 
