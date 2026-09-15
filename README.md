@@ -246,13 +246,6 @@ Patterns in methylation, coverage, and genomic features that may distinguish tum
   <img src="hypomethylation comparison.png" width="500">
 </p>
 
-### Prediction
-
-To run prediction on a new sample:
-
-```bash
-python predict_sample.py --input path/to/sample.bedgraph
-```
 
 The script will:
 
