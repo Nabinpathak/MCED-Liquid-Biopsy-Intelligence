@@ -88,24 +88,29 @@ coverage     = c_i
 You can download the raw cfDNA dataset from the official website of National Center for Biotechnology Information(NCBI).(https://www.ncbi.nlm.nih.gov/)
 ```
 
-# MCED-Liquid-Biopsy-Intelligence
-
-Exploratory computational research on cell-free DNA methylation for multi-cancer early detection (MCED).
-
-> [!NOTE]
-> This is an independent research project. It is exploratory and has not been clinically validated.
-
-## Contents
-
-- [Dataset preparation and preprocessing](#dataset-preparation-and-preprocessing)
-  - [Tumor dataset](#1-tumor-dataset)
-  - [Healthy dataset](#2-healthy-dataset)
-  - [Standardized data structure](#3-standardized-data-structure)
-  - [Output organization](#4-output-organization)
-
 ## Dataset preparation and preprocessing
 
 The project uses separate tumor and healthy DNA methylation datasets. The original data are kept locally and are not in this repository because of their size.
+
+### Raw data format
+
+The dataset used for this project is large (20–100 GB) and cannot be uploaded directly to GitHub. For now, the dataset is stored locally.
+
+Where:
+
+- `chr1`: chromosome
+- `10468–10469`: genomic interval (1 bp CpG site)
+- `100 / 83`: methylation percentage or fraction
+- `6 / 5`: number of reads covering the CpG
+- `0 / 1`: methylated vs unmethylated read count
+
+```text
+CpG position = chr1_10468
+methylation  = m_i
+coverage     = c_i
+```
+
+You can download the raw cfDNA dataset from the official website of the [National Center for Biotechnology Information (NCBI)](https://www.ncbi.nlm.nih.gov/).
 
 ### 1. Tumor dataset
 
@@ -177,6 +182,8 @@ mced_dataset/
 ```
 
 These files are the input for the later feature extraction and machine-learning experiments.
+
+
 ## Features Extracted
 
 The structure utilized in contemporary MCED (Multi-Cancer Early Detection) systems is adopted in this project:
