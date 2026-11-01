@@ -87,10 +87,81 @@ coverage     = c_i
 
 You can download the raw cfDNA dataset from the official website of National Center for Biotechnology Information(NCBI).(https://www.ncbi.nlm.nih.gov/)
 ```
-D:\MCED-Liquid-Biopsy-Intelligence\mced_dataset
-├── healthy_CpG
-├── tumor_CpG
-└── labelled_data.xlsx
+
+## Dataset preparation and preprocessing
+
+The project uses separate tumor and healthy DNA methylation datasets. The original data are kept locally and are not in this repository because of their size.
+
+### 1. Tumor dataset
+
+| | |
+|---|---|
+| Source | NCBI Gene Expression Omnibus (GEO) |
+| Accession | [GSE212391](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE212391) |
+| Study | Towards the DNA methylation haplotype map of 11 common solid cancers |
+| Data type | Whole-genome bisulfite sequencing (WGBS) |
+| Samples | 110 fresh-frozen tumor tissue samples, 11 solid cancer types |
+
+The downloaded files are converted from bedGraph into a standard four-column format.
+
+<details>
+<summary><b>Tumor preprocessing steps</b></summary>
+
+1. Read input files with a `.bedGraph` or `.bedGraph.gz` extension.
+2. Skip metadata and comment lines that begin with `track` or `#`.
+3. Drop records with fewer than six columns.
+4. Take the chromosome, genomic start and genomic end coordinates.
+5. Read coverage from the fifth column and the methylated-read count from the sixth.
+6. Calculate the methylation fraction:
+
+   ```text
+   Methylation Fraction = Methylated Reads / Coverage
+   ```
+
+7. Set the fraction to zero when coverage is zero.
+8. Write the records to normalized four-column bedGraph files, rounding the fraction to six decimal places.
+
+</details>
+
+### 2. Healthy dataset
+
+The healthy methylation BED files are stored separately in the `healthy_CpG` directory. A Python script using pandas does the following:
+
+1. Reads each `.bed` file as tab-separated with no header.
+2. Keeps the first four columns (columns 0 to 3).
+3. Leaves the values as they are, with no numerical transformation.
+4. Writes the result as `.bedgraph` files in the `healthy_bedgraph` directory.
+
+This step standardizes the file structure. It does not calculate or normalize methylation fractions.
+
+> [!WARNING]
+> The accession of the original healthy dataset and the meaning of its fourth column still need to be checked against the source.
+
+### 3. Standardized data structure
+
+Both workflows produce a four-column representation:
+
+| Column | Description |
+|---|---|
+| Chromosome | Genomic chromosome identifier |
+| Start | Genomic start coordinate |
+| End | Genomic end coordinate |
+| Value | Tumor: calculated methylation fraction. Healthy: original fourth-column value |
+
+> [!IMPORTANT]
+> The fourth column has a different origin in each workflow. Before combining the two datasets, confirm what the healthy value represents and whether it is comparable to the tumor methylation fraction.
+
+### 4. Output organization
+
+```text
+mced_dataset/
+├── healthy_CpG/         # Original healthy BED files
+├── healthy_bedgraph/    # Standardized healthy bedGraph files
+├── tumor_CpG/           # Original tumor bedGraph files
+└── tumor_processed/     # Processed tumor bedGraph files
+```
+
+These files are the input for the later feature extraction and machine-learning experiments.
 ```
 ## Features Extracted
 
